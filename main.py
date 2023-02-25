@@ -57,33 +57,33 @@ Output:
 9
 """
 
-# # 1 вариант 
-# n = int(input('Введите количество кустов: '))
-# bush = list(map(int, input('Введите урожайность кустов: ').split()))
-# max = 0
-# for i in range(n):
-#     sum_bush = sum(bush[i:i+3])
-#     if sum_bush > max:
-#         max = sum_bush
-# if bush[0] + bush[-1] + bush[-2] > max:
-# 	max = bush[0] + bush[-1] + bush[-2]
+# 1 вариант 
+n = int(input('Введите количество кустов: '))
+bush = list(map(int, input('Введите урожайность кустов: ').split()))
+max = 0
+for i in range(n):
+    sum_bush = sum(bush[i:i+3])
+    if sum_bush > max:
+        max = sum_bush
+if bush[0] + bush[-1] + bush[-2] > max:
+	max = bush[0] + bush[-1] + bush[-2]
         
-# if bush[0] + bush[1] + bush[-1] > max:
-# 	max = bush[0] + bush[1] + bush[-1]
+if bush[0] + bush[1] + bush[-1] > max:
+	max = bush[0] + bush[1] + bush[-1]
         
-# print(f'Максимальный урожай: {max}')
+print(f'Максимальный урожай: {max}')
 
 
-# # 2 вариант решения (оптимальный)
+# 2 вариант решения (оптимальный)
 
-# n = int(input())
-# arr = list()
-# for i in range(n):
-#     x = int(input())
-#     arr.append(x)
+n = int(input())
+arr = list()
+for i in range(n):
+    x = int(input())
+    arr.append(x)
 
-# arr_count = list()
-# for i in range(len(arr) - 1):
-#     arr_count.append(arr[i - 1] + arr[i]+arr[i + 1])
-# arr_count.append(arr[-2]+arr[-1]+arr[0])
-# print(max(arr_count)) 
+arr_count = list()
+for i in range(len(arr) - 1):
+    arr_count.append(arr[i - 1] + arr[i]+arr[i + 1])
+arr_count.append(arr[-2]+arr[-1]+arr[0])
+print(max(arr_count)) 
